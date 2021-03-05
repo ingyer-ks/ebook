@@ -1,0 +1,88 @@
+\documentclass{book}
+
+\usepackage[unicode=true,
+            pdfauthor={ingyer ks},
+            pdftitle={기초통신이론},
+            pdfsubject={통신에 대해 다루고 싶어하는 문서},
+            pdfkeywords={통신},
+            colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            anchorcolor=blue]{hyperref}
+
+\usepackage[hangul]{kotex}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\graphicspath{{../images/}}
+
+\usepackage{silence}
+\WarningsOff*
+
+\usepackage{xcolor}
+
+\usepackage{amsmath,amssymb}
+\usepackage{IEEEtrantools}
+
+\usepackage{fontspec}
+\hangulfontspec{본명조}
+\hangulfontspec{본고딕}
+\setmainhangulfont{본명조}
+\setsanshangulfont{본고딕}
+
+\defaultfontfeatures{Ligature=TeX}
+
+\raggedbottom
+
+\usepackage{tabu}
+
+\usepackage[framemethod=tikz]{mdframed}
+\newmdtheoremenv[%
+    topline=false, bottomline=false,rightline=false,
+    outerlinewidth=3pt, outerlinecolor=DeepSkyBlue!80,
+    backgroundcolor=Cyan!5,
+    splittopskip=10pt, splitbottomskip=10pt,
+    skipabove=5pt, skipbelow=5pt,
+    innertopmargin=\topskip, innerbottommargin=\topskip,
+]{Thmbox}{정리}[chapter]
+\newmdenv[%
+    linecolor=MediumPurple,skipabove=10pt,
+    roundcorner=5pt,backgroundcolor=MediumPurple!10,
+    ]{Problem}
+\newmdenv[%
+    linecolor=green!10, skipabove=10pt,
+    roundcorner=5pt, backgroundcolor=green!8,
+    ]{Solution}
+\newmdenv[%
+    linecolor=blue!10, skipabove=10pt,
+    roundcorner=0pt, backgroundcolor=blue!5,
+    ]{Stress}
+
+\hypersetup{pdfencoding=auto}
+
+\newcommand{\image}[2][width=12cm]{\includegraphics[#1]{#2}}
+
+\makeindex
+
+\title{기초 통신 이론}
+\author{ingyer ks}
+\date{2020년 12월 15일}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\include{intro}
+\include{intro_to_comm}
+\include{signals_and_systems}
+\include{probability_and_random_process}
+\include{analog_comm}
+\include{digital_comm}
+\include{wireless}
+\include{information_theory}
+
+\appendix
+\include{disc_time}
+\printindex
+
+\end{document}

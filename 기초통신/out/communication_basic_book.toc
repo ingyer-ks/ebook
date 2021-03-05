@@ -1,0 +1,128 @@
+\contentsline {chapter}{\numberline {1}이 문서에 대해}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}문서 작성 경위와 목표}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}추천 도서 및 문서}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}피드백}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}도움을 주신 분들}{6}{section.1.4}%
+\contentsline {section}{\numberline {1.5}지식재산권 관련}{7}{section.1.5}%
+\contentsline {chapter}{\numberline {2}통신이란 무엇인가?}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}통신의 정의}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}통신의 분류}{10}{section.2.2}%
+\contentsline {paragraph}{아날로그 vs 디지털}{10}{section*.2}%
+\contentsline {paragraph}{기저대역 vs 대역통과}{10}{section*.3}%
+\contentsline {paragraph}{선형 변조 vs 비선형 변조}{10}{section*.4}%
+\contentsline {paragraph}{유선 vs 무선}{10}{section*.5}%
+\contentsline {section}{\numberline {2.3}통신의 단계}{10}{section.2.3}%
+\contentsline {chapter}{\numberline {3}기초 신호와 시스템}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}신호}{13}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}신호의 정의와 신호의 해석 관점}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}신호의 분류}{14}{subsection.3.1.2}%
+\contentsline {paragraph}{연속시간신호 vs 이산시간신호}{14}{section*.6}%
+\contentsline {paragraph}{아날로그 신호 vs 디지털 신호}{15}{section*.7}%
+\contentsline {paragraph}{주기신호 vs 비주기신호}{16}{section*.8}%
+\contentsline {paragraph}{전력신호 vs 에너지신호}{16}{section*.9}%
+\contentsline {paragraph}{랜덤신호 vs 결정신호}{18}{section*.10}%
+\contentsline {subsection}{\numberline {3.1.3}중요한 신호들}{18}{subsection.3.1.3}%
+\contentsline {paragraph}{사인파}{18}{section*.11}%
+\contentsline {paragraph}{단위 계단 함수}{18}{section*.12}%
+\contentsline {paragraph}{단위 임펄스 함수}{19}{section*.13}%
+\contentsline {section}{\numberline {3.2}시스템}{23}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}시스템의 정의}{23}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}시스템의 주요 성질}{23}{subsection.3.2.2}%
+\contentsline {paragraph}{선형성(Linearity)}{24}{section*.14}%
+\contentsline {paragraph}{시불변성(Time-invariance)}{24}{section*.15}%
+\contentsline {paragraph}{인과성(Causality)}{25}{section*.16}%
+\contentsline {paragraph}{안정성(Stability)}{25}{section*.17}%
+\contentsline {subsection}{\numberline {3.2.3}선형 시불변 시스템}{25}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}시간 영역 해석}{25}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}신호와 임펄스 함수}{25}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}콘볼루션}{26}{subsection.3.3.2}%
+\contentsline {paragraph}{인과성}{27}{section*.18}%
+\contentsline {subsubsection}{콘볼루션의 법칙과 성질}{28}{section*.19}%
+\contentsline {paragraph}{결합법칙}{28}{section*.20}%
+\contentsline {paragraph}{교환법칙}{28}{section*.21}%
+\contentsline {paragraph}{분배법칙}{29}{section*.22}%
+\contentsline {paragraph}{선형성}{29}{section*.23}%
+\contentsline {paragraph}{공액 변환}{29}{section*.24}%
+\contentsline {paragraph}{시간 이동}{29}{section*.25}%
+\contentsline {paragraph}{미분}{29}{section*.26}%
+\contentsline {paragraph}{임펄스 함수와의 콘볼루션}{30}{section*.27}%
+\contentsline {paragraph}{콘볼루션 결과의 길이}{30}{section*.28}%
+\contentsline {subsection}{\numberline {3.3.3}콘볼루션과 LTI 시스템의 응답}{30}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}콘볼루션에서 입력이 뒤집히는 이유}{31}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}이산 시간 신호와 시스템에 대해}{32}{section.3.4}%
+\contentsline {section}{\numberline {3.5}주파수 영역 해석}{32}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}오일러 공식}{32}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}연속 시간 주기 신호의 주파수 해석}{33}{subsection.3.5.2}%
+\contentsline {subsubsection}{푸리에 급수 표현}{33}{section*.29}%
+\contentsline {subsubsection}{푸리에 급수 해석}{34}{section*.30}%
+\contentsline {subsubsection}{푸리에 급수 해석 예제}{35}{section*.31}%
+\contentsline {subsubsection}{CTFS의 성질}{40}{section*.32}%
+\contentsline {paragraph}{선형성}{40}{section*.33}%
+\contentsline {paragraph}{시간 천이와 위상 천이}{40}{section*.34}%
+\contentsline {paragraph}{미분된 신호의 푸리에 급수 해석}{41}{section*.35}%
+\contentsline {paragraph}{적분된 신호의 푸리에 급수 해석}{41}{section*.36}%
+\contentsline {paragraph}{두 신호의 곱과 푸리에 급수 해석}{42}{section*.37}%
+\contentsline {paragraph}{두 신호의 콘볼루션과 푸리에 급수 해석}{43}{section*.38}%
+\contentsline {subsubsection}{Parseval의 정리}{44}{section*.39}%
+\contentsline {subsection}{\numberline {3.5.3}연속 시간 비주기 신호의 주파수 해석}{45}{subsection.3.5.3}%
+\contentsline {subsubsection}{주기함수를 이용한 비주기 신호의 표현}{45}{section*.40}%
+\contentsline {subsubsection}{푸리에 변환 표현}{45}{section*.41}%
+\contentsline {subsubsection}{CTFT의 성질}{47}{section*.42}%
+\contentsline {paragraph}{선형성}{47}{section*.43}%
+\contentsline {paragraph}{쌍대성(Duality)}{47}{section*.44}%
+\contentsline {paragraph}{시간 천이와 위상 천이}{47}{section*.45}%
+\contentsline {paragraph}{시간 비율 변화에 따른 푸리에 변환의 변화}{47}{section*.46}%
+\contentsline {paragraph}{미분된 신호의 푸리에 변환}{48}{section*.47}%
+\contentsline {paragraph}{두 신호의 곱과 푸리에 변환}{48}{section*.48}%
+\contentsline {paragraph}{콘볼루션과 푸리에 변환}{48}{section*.49}%
+\contentsline {subsubsection}{Parseval의 정리}{48}{section*.50}%
+\contentsline {subsubsection}{중요한 CTFT 결과}{48}{section*.51}%
+\contentsline {paragraph}{$1$의 CTFT}{48}{section*.52}%
+\contentsline {paragraph}{$e^{j2\pi f_0t}$의 CTFT}{49}{section*.53}%
+\contentsline {paragraph}{사인파의 CTFT}{49}{section*.54}%
+\contentsline {paragraph}{$\delta (t)$의 CTFT}{49}{section*.55}%
+\contentsline {paragraph}{$u(t)$의 CTFT}{49}{section*.56}%
+\contentsline {paragraph}{구형 함수의 CTFT}{50}{section*.57}%
+\contentsline {paragraph}{적분된 신호의 푸리에 변환}{51}{section*.58}%
+\contentsline {chapter}{\numberline {4}기초 확률변수론과 랜덤프로세스}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}확률변수론}{53}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}확률}{53}{subsection.4.1.1}%
+\contentsline {subsubsection}{용어 정의와 중요한 법칙과 정리들}{53}{section*.59}%
+\contentsline {paragraph}{상호 배제}{54}{section*.60}%
+\contentsline {paragraph}{결합 확률}{54}{section*.61}%
+\contentsline {paragraph}{조건부 확률}{54}{section*.62}%
+\contentsline {paragraph}{총 확률 법칙}{55}{section*.63}%
+\contentsline {paragraph}{베이즈 정리}{55}{section*.64}%
+\contentsline {paragraph}{독립사건}{56}{section*.65}%
+\contentsline {subsection}{\numberline {4.1.2}확률변수}{56}{subsection.4.1.2}%
+\contentsline {paragraph}{확률변수의 조건}{57}{section*.66}%
+\contentsline {subsubsection}{누적 분포 함수}{57}{section*.67}%
+\contentsline {paragraph}{누적 분포 함수의 성질}{57}{section*.68}%
+\contentsline {subsubsection}{확률 밀도 함수}{58}{section*.69}%
+\contentsline {paragraph}{확률 밀도 함수의 성질}{58}{section*.70}%
+\contentsline {subsection}{\numberline {4.1.3}확률변수에 대한 연산}{58}{subsection.4.1.3}%
+\contentsline {subsubsection}{기댓값}{58}{section*.71}%
+\contentsline {subsubsection}{확률변수에 대한 함수의 기댓값}{59}{section*.72}%
+\contentsline {paragraph}{분산}{60}{section*.73}%
+\contentsline {section}{\numberline {4.2}랜덤 프로세스}{60}{section.4.2}%
+\contentsline {chapter}{\numberline {5}기초 아날로그 통신}{61}{chapter.5}%
+\contentsline {section}{\numberline {5.1}진폭 변조}{61}{section.5.1}%
+\contentsline {section}{\numberline {5.2}각 변조}{61}{section.5.2}%
+\contentsline {chapter}{\numberline {6}기초 디지털 통신}{63}{chapter.6}%
+\contentsline {section}{\numberline {6.1}아날로그-디지털 변환}{63}{section.6.1}%
+\contentsline {section}{\numberline {6.2}디지털 변조}{63}{section.6.2}%
+\contentsline {section}{\numberline {6.3}기저대역 통신}{63}{section.6.3}%
+\contentsline {chapter}{\numberline {7}기초 무선공학}{65}{chapter.7}%
+\contentsline {chapter}{\numberline {8}기초 정보이론}{67}{chapter.8}%
+\contentsline {chapter}{\numberline {A}이산 시간 신호의 주파수 해석}{69}{appendix.A}%
+\contentsline {section}{\numberline {A.1}이산 시간 주기 신호의 주파수 해석}{69}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}푸리에 급수 표현}{69}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}푸리에 급수 해석}{70}{subsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.1.3}DTFS의 성질}{71}{subsection.A.1.3}%
+\contentsline {paragraph}{선형성}{71}{section*.74}%
+\contentsline {paragraph}{시간 천이와 위상 천이}{71}{section*.75}%
+\contentsline {paragraph}{누적 신호의 푸리에 해석}{71}{section*.76}%
+\contentsline {paragraph}{두 신호의 곱과 푸리에 급수 해석}{72}{section*.77}%
+\contentsline {paragraph}{두 신호의 콘볼루션과 푸리에 급수 해석}{72}{section*.78}%
+\contentsline {subsection}{\numberline {A.1.4}Parseval의 정리}{73}{subsection.A.1.4}%
+\contentsline {section}{\numberline {A.2}이산 시간 비주기 신호의 주파수 해석}{73}{section.A.2}%
