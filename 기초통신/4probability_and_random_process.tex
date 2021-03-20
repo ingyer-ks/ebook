@@ -150,21 +150,119 @@
     E[X]=\int_{-\infty}^{\infty}xf_X(x)dx
 \end{equation}
 앞서 언급했듯 델타 함수를 이용하여 PDF를 표현한다면 이산확률변수는 연속확률변수의 특수한 케이스로 취급할 수 있으므로 이제부터는 웬만하면 연속확률변수 버전을 사용하겠다.
-\subsubsection{확률변수에 대한 함수의 기댓값}
-어떤 확률변수 $X$에 대해 함수 $g(\cdot)$을 적용한 $Y=g(X)$가 있다. $X$가 확률변수이기 떄문에 이 $Y$도 확률변수이다.
-따라서 이 $Y$에 대해서도 기댓값을 생각해볼 수 있다. 그렇다면 어떻게 $Y$의 기댓값 $E[Y]$를 구할 수 있을까?
-$g(\cdot)$이란 함수의 출력은 $X$의 값에 의존하므로, 각 $X=x$ 값에 대한 함수의 출력 $y=g(x)$는 그 근원인 $X$의 확률대로 나타날 것이다.
-따라서 그냥 $X$에 대해서와 마찬가지로 $Y$를 $X$에 대해서 쓰고 $X$의 각 확률을 곱해서 더하면 된다. 즉
-\begin{equation}
-    E[Y]=E[g(X)]=\int_{-\infty}^{\infty}g(x)f_X(x)dx
-\end{equation}
-이다.
+
 \paragraph{분산}
 분산 또한 기댓값의 일종이다. 평균으로부터 $X$의 분포가 얼마나 흩어져 있는지를 흩어진 정도의 제곱을 평균함으로써 나타내는 것이기 때문이다.
 수식으로 쓰자면 아래와 같다.
 \begin{equation}
     V[X]=\sigma^2=E[(X-\overline{X})^2]
 \end{equation}
+
+\subsection{다변량 확률변수}
+한 번에 하나의 확률변수가 아닌 두 개 이상의 확률변수를 생각할 수도 있을 것이다. 이처럼 같은 샘플 공간에서 정의되는 여러 확률변수들을 묶은 것을 다변량 확률변수라고 한다.
+여기서는 2개의 확률변수 $X$, $Y$를 묶은 이변량 확률변수 $(X,Y)$에 대해서 생각해보자.
+\subsubsection{결합 CDF(Joint CDF)}
+$X$와 $Y$에 대한 결합 CDF는 다음과 같다.
+\begin{equation}
+    F_{XY}(x,y)=P[X\leqq x , Y\leqq y]
+\end{equation}
+여기서 쉼표는 '그리고'를 의미한다.
+\paragraph{독립인 경우의 결합 CDF}
+만약 $X$와 $Y$가 독립이라면
+\begin{equation}
+    F_{XY}(x,y)=F_X(x)F_Y(y)
+\end{equation}
+이다.
+\paragraph{한계 CDF}
+한계 CDF란 용어는 Marginal CDF를 내 나름대로 번역한 것이다. Marginal은 경계의, 주변의 등의 의미가 있는데, 이들보다는 한국어로 한계비용이라 번역되는 marginal cost의 marginal과 비슷하다고 생각되어서 이를 선택했다.
+한계 CDF란 다변량 확률변수의 결합 CDF로부터 나온 하나의 확률변수에 대한 CDF이다. 수식으로 쓰면 다음과 같다.
+\begin{eqnarray}
+    F_X(x)=F_{XY}(x,\infty)\nonumber\\
+    F_Y(y)=F_{XY}(\infty,y)
+\end{eqnarray}
+이 의미는 관심있는 확률변수 외의 다른 확률변수에 대해서는 확률을 다 더해서 제거해 버린 것이라고 볼 수 있다. 따라서 관심있는 확률변수에 대한 정보만이 남는 것이다.
+\subsubsection{결합 PDF(Joint PDF)}
+결합 CDF를 생각할 수 있다면 결합 PDF도 생각할 수 있을 것이다. 기존 CDF와 PDF의 관계처럼 아래와 같이 정의된다.
+\begin{equation}
+    f_{XY}(x,y)=\frac{\partial^2}{\partial x \partial y} F_{XY}(x,y) \Longleftrightarrow F_{XY}(x,y)=\int_{-\infty}^{x} \int_{-\infty}^{y}f_{XY}(u,v)dudv 
+\end{equation}
+이 결합 PDF를 이용하면 다음과 같은 수식이 성립함을 알 수 있다.
+\begin{equation}
+    P[x_1<X \leqq x_2, y_1 < Y \leqq y_2]=\int_{x_1}^{x_2}\int_{y_1}^{y_2}f_{XY}(x,y)dydx
+\end{equation}
+\paragraph{한계 PDF}
+한계 PDF는 아래와 같이 된다.
+\begin{equation}
+    f_X(x)=\int_{-\infty}^{\infty}f_{XY}(x,y)dy
+\end{equation}
+\paragraph{독립인 경우의 결합 PDF}
+만약 $X$와 $Y$가 독립이면
+\begin{equation}
+    f_{XY}(x,y)=f_X(x)f_Y(y)
+\end{equation}
+이다.
+
+\subsubsection{조건부 분포}
+\paragraph{조건부 PDF}
+조건부 PDF는 다음과 같다.
+\begin{equation}
+    f_{\left.X\right\vert Y}(\left.x\right\vert y)=\frac{f_{XY}(x,y)}{f_Y(y)}
+\end{equation}
+만약 $X$,$Y$가 독립이라면 다음과 같다.
+\begin{equation}
+    f_{\left.X\right\vert Y}(\left.x\right\vert y)=f_X(x)
+\end{equation}
+\paragraph{조건부 CDF}
+조건부 CDF는 다음과 같다.
+\begin{IEEEeqnarray}{rCl}
+    F_{\left. X \right\vert Y}(\left. x \right\vert y)&=&P[\left. X\leqq x\right\vert Y=y]\nonumber\\
+    &=&\int_{u\leqq x}f_{\left. X\right\vert Y}(\left. u\right\vert y)du
+\end{IEEEeqnarray}
+\paragraph{조건부 평균}
+조건부 평균은 다음과 같다.
+\begin{equation}
+    m_{\left.X\right\vert Y}=E[X|Y=y]=\int_{x}xf_{X|Y}(x|y)dx
+\end{equation}
+\paragraph{조건부 분산}
+조건부 분산은 다음과 같다.
+\begin{IEEEeqnarray*}{rCl}
+    \sigma ^2 _{X|Y}&=&E\left[ \left. (X-m_{X|Y})^2\right| Y=y\right]\\
+    &=&\int_{x}(x-m_{X|Y})^2f_{X|Y}(x|y)dx\\
+    &=&E\left[ \left. X^2 \right| Y=y \right]-m^2_{X|Y}\IEEEyesnumber
+\end{IEEEeqnarray*}
+
+\subsubsection{공분산과 결합계수}
+$X$와 $Y$의 공분산은 다음과 같이 정의된다.
+\begin{IEEEeqnarray*}{rCl}
+    Cov[X,Y]&=&\sigma_{XY}=E[(X-m_X)(Y-m_y)]\\
+    &=&E[XY-m_XY-m_YX+m_Xm_Y]\\
+    &=&E[XY]-m_XE[Y]-m_YE[X]+m_Xm_Y\\
+    &=&E[XY]-m_Xm_Y-m_Xm_Y+m_Xm_Y\\
+    &=&E[XY]-m_Xm_Y\IEEEyesnumber
+\end{IEEEeqnarray*}
+만약 $Cov[X,Y]=0$이라면 이 둘은 상관관계가 없다(uncorrelated)라고 한다.
+$X$,$Y$가 독립이라면 $E[XY]=E[X]E[Y]=m_Xm_Y$이므로 $Cov[X,Y]=0$이 되어 독립이라면 상관관계가 없다. 하지만 상관관계가 없다(공분산이 0이다)라고 해서 독립이라고 할 수는 없다.
+\paragraph{결합계수}
+두 확률변수의 상관관계가 얼마나 강한지 나타내는 값을 결합계수라고 한다.
+공분산은 확률변수의 값 자체가 큰 경우 상관관계에 상관없이 큰 값이 나타날 수 있기 때문에, 공분산을 각각의 표준편차로 나누어(그래야 단위가 맞다) 정규화를 시킨다.
+이렇게 하면 결합계수는 -1과 1 사이의 값이 되어 상관의 정도를 알 수 있게 된다.
+\begin{equation}
+    \rho_{XY}=\frac{Cov[X,y]}{\sqrt{Var(X)Var(Y)} }=\frac{\sigma_{XY}}{\sigma_X\sigma_Y}
+\end{equation}
+\subsection{$Y=g(X)$ 형태의 확률변수}
+어떤 확률변수 Y가 다른 확률변수 X로부터 정의될 수 있다. 가령, X가 주사위의 눈 값에 대응되는 확률변수라면, 이를 제곱한 $Y=X^N$라는 확률변수 $Y$도 정의될 수 있을 것이다. 이 $Y$에 대해 알아보자.
+\subsubsection{확률변수에 대한 함수의 기댓값}
+$g(\cdot)$이란 함수의 출력은 $X$의 값에 의존하므로, 각 $X=x$ 값에 대한 함수의 출력 $y=g(x)$는 그 근원인 $X$의 확률대로 나타날 것이다.
+따라서 그냥 $X$에 대해서와 마찬가지로 $Y$를 $X$에 대해서 쓰고 $X$의 각 확률을 곱해서 더하면 된다. 즉
+\begin{equation}
+    E[Y]=E[g(X)]=\int_{-\infty}^{\infty}g(x)f_X(x)dx
+\end{equation}
+이다.
+\subsubsection{$Y=g(X)$의 CDF와 PDF}
+앞에서  
+
+
+
 
 
 \section{랜덤 프로세스}
