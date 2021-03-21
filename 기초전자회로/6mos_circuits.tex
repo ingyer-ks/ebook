@@ -1,0 +1,60 @@
+\chapter{MOSFET 회로}
+앞서 배운 MOSFET을 이용한 회로들을 해석하는 방법을 알아보자.
+
+\section{임피던스}
+MOSFET의 각 단자의 임피던스를 알아보자. 관심있는 단에 테스트 전압을 걸어서 흘러 들어가는 전류의 비율을 구할 것이다. 그리고 다른 단은 모두 접지에 연결해서 영향이 없게 해야 한다.
+\subsection{게이트의 입력 임피던스}
+\figurename~\ref{fig:mos pi small signal model}\을 보자. 게이트는 어디에도 연결되어 있지 않다. 따라서 들어가는 전류가 0이니 임피던스는 무한대이다.
+한편, \figurename~\ref{fig:mos t small signal model}에선 어떨까? 게이트가 다른 곳과 연결되어 있는 것 같다. 하지만 역시 들어가는 전류는 0이다. 왜 그럴지 생각해보자.
+\subsection{드레인의 출력 임피던스}
+드레인은 출력을 뽑는 단이기 때문에 출력 임피던스라 한다. 게이트와 소스를 접지해보자.
+\begin{figure}[!tpb]
+    \centering
+    \image{drain_output_impedance.PNG}
+    \caption{드레인 출력 임피던스}\label{fig:drain output impedance}
+\end{figure}
+\figurename~\ref{fig:drain output impedance}에서 $V_{GS}=0-0=0$이므로 $g_mV_{GS}=0$이다. 따라서 남는 것은 $r_o$이므로 드레인 출력 임피던스는 $r_o$이다.
+\subsection{소스의 입력 임피던스}
+소스 단에서 들여다본 임피던스를 구해 보자. 드레인을 접지하고 소스에 테스트 전압을 걸어 보자.
+\begin{figure}[!hpb]
+    \centering
+    \image[width=10cm]{src_input_impedance.PNG}
+    \caption{소스 입력 임피던스}\label{fig:src input impedance}
+\end{figure}
+\figurename~\ref{fig:src input impedance}에서 $V_{GS}=0-V_{test}=-V_{test}$이다. 따라서 종속 전류원은 위쪽으로 $g_mV_{test}$만큼의 전류를 흘린다.
+이와 병렬로 드레인 출력 임피던스 $r_o$가 있으므로 이를 통해서 $V_{test}/r_o$가 흐른다.
+따라서 흘러 들어가는 총 전류는 $g_mV_{test}+V_{test}/r_o=V_{test}(g_m+1/r_o)$이다.
+그러므로 총 임피던스는 $\frac{V_{test}}{V_{test}(g_m+1/r_o)}=\frac{1}{(g_m+1/r_o)}=\frac{\frac{r_o}{g_m}}{r_o+1/g_m}=\left. r_o\left.\right\vert\right\vert\frac{1}{g_m}$이다.
+
+\section{증폭기}
+MOS를 활용하면 입력 교류 전압보다 큰 출력 교류 전압을 만들어낼 수 있다. 그래서 증폭기라고 한다. (작게도 만들 수 있다.)
+가능한 세 가지 증폭기 회로 구성을 알아보자.
+
+\subsection{공통 소스 구성}
+공통 소스 구성이란 게이트로 신호를 입력하고 드레인에서 출력을 뽑는 구성이다. 소스는 게이트와 드레인의 공통 기준 전압 역할을 하기 때문에 공통 소스 구성이라고 한다. \figurename~\ref{fig:cs stage}\을 보자.
+\begin{figure}[!hpb]
+    \centering
+    \image[width=7cm]{cs_topology.PNG}
+    \caption{일반적인 공통 소스 회로}\label{fig:cs stage}
+\end{figure}
+이 회로에서 $V_{GS}$는 얼마일까? $V_{in}$이 게이트와 $R_S$에 나눠 걸린다. 소신호 회로로 바꿔서 생각해보자(\figurename~\ref{fig:cs small signal}). 소신호는 교류만을 다루므로 DC 전압, 전류원은 0으로 처리한다. 또한 $r_o$는 매우 크다고 가정하자.
+\begin{figure}[!hpb]
+    \centering
+    \image[width=6cm]{cs_small_signal.PNG}
+    \caption{공통 소스 소신호 회로}\label{fig:cs small signal}
+\end{figure}
+\figurename~\ref{fig:cs small signal}에서 $V_{GS}=V_{in}\frac{1/g_m}{1/g_m+R_S}$임을 알 수 있다. 이 전압에 의해서 $g_mV_{gs}$전류원이 전류를 제일 위의 AC 그라운드에서 $R_D$를 통해서 전류를 끌어온다.
+그리고 그로 인한 전압 강하인 $0-g_mV_{GS}R_D=-g_mV_{GS}R_D$가 $V_{out}$이 된다.
+전압이득을 $A_v$라 하고 정리하면 다음과 같다.
+\begin{IEEEeqnarray*}{rCl}
+    A_v&=&\frac{V_{out}}{V_{in}}=\frac{-g_mV_{in}\frac{1/g_m}{1/g_m+R_S}R_D}{V_{in}}\\
+    &=&-\frac{R_D}{1/g_m+R_S}\IEEEyesnumber
+\end{IEEEeqnarray*}
+이다.
+
+이 수식을 다른 관점에서 해석해보자. 어차피 $R_D, 1/g_m, R_S$에는 모두 같은 어떤 전류 $I$가 흐른다. \figurename~\ref{fig:cs small signal}에서 $V_{in}$은 $(1/g_m+R_S)I$이다.
+한편 출력 전압은 $V_{out}-0=V_{out}=-R_DI$이다. 따라서 전압이득은 $A_v=\frac{-R_DI}{(1/g_m+R_S)I}=\frac{-R_D}{1/g_m+R_S}$임을 바로 알 수 있다.
+이를 풀어서 쓰면 다음과 같다.
+\begin{equation}
+    (전압 이득)=-\frac{위쪽 임피던스}{아래쪽 임피던스}
+\end{equation}
