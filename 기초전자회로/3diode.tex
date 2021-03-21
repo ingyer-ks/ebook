@@ -78,3 +78,21 @@ P타입 반도체와 N타입 반도체를 붙이면 처음에는 자유 전자�
     \image[height=5cm]{diode_const_voltage_model.pdf}
     \caption{다이오드의 일정 전압 모델}\label{fig:const voltage iv model}
 \end{figure}
+
+\subsection{다이내믹 저항}
+옴의 법칙에서 저항은 $R=V/I$이다. 이를 좀 더 확장하여 저항을 미분 형태로 정의해보자.
+\begin{equation}
+    r=\frac{dv}{di}
+\end{equation}
+이 저항을 다이내믹 저항이라고 하자. 이를 활용하여 \figurename~\ref{fig:const voltage iv model}\을 분석해보면 문턱전압에서 더 이상 전압이 변하지 않으므로 $dv=0$이다.
+따라서 다이내믹 저항의 분자가 0이 되어 $r=0$이 된다. 즉 저항이 없고 전압원만 있는 것처럼 보인다는 것이다.
+하지만, 지수함수 모델을 보면 기울기가 무한대가 아니다. 아주 클 뿐. 이 때의 다이내믹 저항을 구해보자.
+\begin{IEEEeqnarray*}{rCl}
+    I_D&=&I_s(e^{V_D/V_T}-1)\\
+    \frac{dI_D}{dV_D}&=&\frac{1}{V_T}I_s(e^{V_D/V_T}-1)\\
+    &=&\frac{I_D}{V_T}\\
+    \therefore r&=&\frac{dV_D}{dI_D}=\frac{V_T}{I_D}\IEEEyesnumber\label{eqn:dynamic resistance}
+\end{IEEEeqnarray*}
+따라서 어떤 DC 전류/전압이 있는 상황에서 다이오드는 전압원과 작은 저항이 있는 것으로 모델링할 수 있다.
+
+이 다이내믹 저항 개념은 뒤의 MOS나 BJT에서도 다뤄질 것이다.
