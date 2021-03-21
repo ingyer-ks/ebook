@@ -36,14 +36,15 @@
 양 끝의 전위 곡선 사이의 간격은 멀어졌고, 중간의 전위 곡선들은 옆의 원자핵의 전위 곡선들과 중첩됨에 따라 $\bigcap $ 형태가 되어 낮아졌다. 이에 따라 에너지 간격이 작아졌고, 결국에는 빨간 상자처럼 에너지들이 연속적인 것처럼 촘촘히 늘어서게 되었다.
 이렇게 에너지가 연속적으로 늘어서게 된 것을 에너지 밴드라고 한다. 우리는 반도체 결정을 다루므로 앞으로는 에너지 밴드 개념을 사용할 것이다.
 
-한편, 전자가 에너지를 충분히 가지면 원자핵의 전기력을 이겨내고 결정 내를 자유롭게 돌아다닐 수 있게 된다. 그림으로 그리면 \figurename~\ref{fig:energy band}\와 같다.
+한편, 외부의 열에 의해서 전자가 에너지를 충분히 가지면 원자핵의 전기력을 이겨내고 결정 내를 자유롭게 돌아다닐 수 있게 된다. 그림으로 그리면 \figurename~\ref{fig:energy band}\와 같다.
 \begin{figure}[!hbp]
     \centering
     \image[height=5cm]{energy_band.png}
     \caption{에너지 밴드}\label{fig:energy band}
 \end{figure}
+
 \figurename~\ref{fig:energy band}에서 $E_v$는 가전자대역(Valence Band)라 하고, $E_c$는 전도대역(Conduction Band)라 한다. 전자가 올라가서 자유롭게 움직임에 따라 전기를 흘릴 수 있는 대역이란 뜻이다.
-그리고 이 두 대역 사이의 빈 에너지 공간을 금지대역(Forbidden Band)이라 하고, 이 높이를 밴드갭이라고 한다.
+그리고 이 두 대역 사이의 빈 에너지 공간을 금지대역(Forbidden Band)이라 하고, 이 높이를 밴드갭이라고 한다. 외부 온도가 높아지면 전자가 더 많은 열을 받아서 더 쉽게 이 밴드갭을 뛰어넘을 수 있으므로 온도가 올라가면 자유 전자들이 많아진다.
 
 도체, 반도체, 부도체는 이 밴드갭이 얼마냐에 따라 달라진다. 도체의 경우는 밴드갭이 없거나 작아서 아주 쉽게 전자들이 전도대역으로 올라갈 수 있으므로 전기가 잘 통하는 것이고, 부도체는 이 밴드갭이 너무나 커서 전자가 거의 올라가지 못해서 전기가 흐르지 않는다. 반도체는 그 중간이다.
 
@@ -67,18 +68,20 @@
 \section{도핑}
 도핑이란 진성 반도체에 뭔가를 넣는다는 뜻이다. 운동선수들이 약을 몸에 넣는 불법행위를 하면 도핑한다고 하는 것을 떠올려보자.
 \subsubsection{N타입 도핑}
-먼저 인(P)을 규소 결정에 집어넣어 보자. 인은 규소의 오른쪽에 있으므로 전자가 하나 더 많다. 따라서 \figurename~\ref{fig:P doping}\과 같이 될 것이다.
+먼저 인(P)을 규소 결정에 집어넣어 보자. 인은 규소의 오른쪽에 있으므로 전자가 하나 더 많다. 따라서 \figurename~\ref{fig:Phosphorus doping}\과 같이 될 것이다.
 전자는 음의 전기(Negative)를 띠므로 이 반도체를 N 타입 반도체라고 한다. 또한 전자를 제공한다는 의미에서 인을 도너(Donor)라고 한다.
 \begin{figure}[!hbp]
     \centering
-    \image[height=5cm]{p_doping.png}
-    \caption{인으로 도핑된 반도체}\label{fig:P doping}
+    \image[height=5cm]{Phosphorus_doping.png}
+    \caption{인으로 도핑된 반도체}\label{fig:Phosphorus doping}
 \end{figure}
-보라색 잉여 전자가 하나 생겼다. 이 잉여 전자는 자유롭게 결정 내를 돌아다닐 수 있다. 즉 전도대역에 있는 전자가 많아지는 것이다.
+보라색 잉여 전자가 하나 생겼다. 
+
+이 잉여 전자는 자유롭게 결정 내를 돌아다닐 수 있다. 즉 전도대역에 있는 전자가 많아지는 것이다.
 이를 수학적으로 표현하는 방법이 바로 페르미 준위이다. 진성 반도체에서는 전자의 존재 확률이 0.5인 지점이 가운데 있었는데, 전도대역에 전자가 더 많이 존재하므로 전자의 존재 확률이 0.5가 되는 지점은 더 위에 있을 것이다.
 즉 페르미 준위가 위로 올라가는 것이다.
 그림으로 그리면 \figurename~\ref{fig:n type fermi level}\과 같다.
-\begin{figure}[!hbp]
+\begin{figure}[!tbp]
     \centering
     \image[height=5cm]{n_type_semicon.png}
     \caption{N 타입 반도체의 페르미 준위}\label{fig:n type fermi level}
@@ -90,3 +93,77 @@ N 타입 반도체에서는 진성 상태보다 전자의 수가 양공보다 �
 \end{equation}
 
 \subsubsection{P타입 도핑}
+이번에는 붕소(B)를 집어넣어 보자. 붕소는 규소의 왼쪽에 있으므로 전자가 하나 부족하다. 즉 전자를 받아들일 수 있는 것이다. 그런 의미에서 이 떄의 붕소를 억셉터(Acceptor)라고 한다. 그리고 이 반도체를 positive에서 따와서 P 타입 반도체라고 한다.
+그림으로 그리면 \figurename~\ref{fig:Boron doping}\과 같다.
+\begin{figure}[!hbp]
+    \centering
+    \image[height=5cm]{boron_doping.png}
+    \caption{붕소로 도핑된 반도체}\label{fig:Boron doping}
+\end{figure}
+
+이 양공은 전자를 받아들일 수 있는데, 그 전자는 어딘가에서 온 것이므로 전자를 받아들이면 그 전자가 출발한 곳에 또 전자가 하나 부족하게 된다. 이를 반대로 해석하면 양공이 전자와 반대 방향으로 옮겨다니는 것으로 해석할 수 있다.
+즉 양공 입장에서 전도대역(전자 입장에서 가전자대역)에 양공이 많아지는 것이다. 페르미 준위는 전자 존재 확률이 1/2인 곳이라 했는데, 이는 양공 존재 확률도 1/2라는 뜻이므로, 양공이 $E_v$에 더 많이 존재하게 된 지금 페르미 준위는 $E_v$에 더 가까워질 것이다.
+그림으로 그리면 \figurename~ \ref{fig:p type fermi level}\과 같다.
+\begin{figure}[!tpb]
+    \centering
+    \image[height=5cm]{p_type_semicon.png}
+    \caption{P 타입 반도체의 페르미 준위}\label{fig:p type fermi level}
+\end{figure}
+P 타입 반도체에서 전자 농도를 $n_p$, 양공 농도를 $p_p$라 하자. 또한, N 타입에서와 마찬가지로 도핑된 억셉터 농도 $N_A$와 가전자대역에 있는 정공 농도는 거의 같다($p_p\cong N_A$). 따라서 다음 수식이 성립한다.
+\begin{equation}
+    n_p p_p={n_i}^2 \Rightarrow n_p=\frac{{n_i}^2}{N_A}
+\end{equation}
+
+\section{반도체 내에서의 캐리어 움직임}
+카x라이더란 게임을 해 보았다면 드리프트란 이름이 익숙할 것이다. 미끄러지는 것이 바로 드리프트 아닌가? 마찬가지로 전자나 양공도 드리프트를 할 수 있다.
+드리프트만 하는 것이 아니다. 캐리어들이 서로 부딪치다 보면 결국엔 농도가 높은 곳에서 낮은 곳으로 움직이게 되는데, 이를 확산이라 한다.
+이 두 메커니즘을 살펴보자.
+\subsection{드리프트}
+먼저 자유 공간에서의 전자 움직임을 생각해보자. 힘이 일정하게 주어질 때 다음 수식이 성립한다.
+\begin{IEEEeqnarray*}{rCl}
+    \vec{F} &=&-q\vec{E}\\
+    \vec{a}&=&\frac{\vec{F}}{m_e}=-\frac{q\vec{e}}{m_e}\\
+    \vec{v}&=&\vec{a}t+\vec{v_0}\\
+    &=&-\frac{q\vec{E}}{m_e}t+\vec{v_0}
+\end{IEEEeqnarray*}
+그런데, 반도체 내에서는 전자가 자유롭게 움직이질 못한다. 규소나 도핑된 원자핵에 부딪히기도 하고, 서로간에 부딪히기도 한다. 따라서 마치 마찰력이 있는 상황처럼 된다.
+이 때의 캐리어의 속도는 다음과 같이 전기장에 비례한다.
+\begin{equation}
+    \vec{v}_{drift}=\mu \vec{E}
+\end{equation}
+위에서 $\mu$는 이동도(mobility)라고 한다. 
+
+한편 전류란 것은 단위시간당 어떤 면을 통과하는 전하량이므로, 캐리어가 많을수록, 캐리어가 빨리 이동할수록 전류는 커진다. 그리고 전류를 단위면적으로 나눠서 생각한 전류밀도는 결국 캐리어의 농도와 속도와 단위 전하량의 곱이 될 것이다.
+그리고 전자는 음전기를 띠므로 전기장의 반대 방향으로, 양공은 양전기를 띠므로 전기장 방향으로 움직인다. 수식으로 정리하면 전자의 전류 밀도 $J_{n,drift}$과 양공에 의한 전류 밀도 $J_{p,drift}$는 다음과 같이 쓸 수 있다.
+\begin{IEEEeqnarray*}{rCl}
+    J_{n,drift}&=&n (-\mu_nE)(-q)=n(\mu_nE)q\\
+    J_{p,drift}&=&p(\mu_pE)q\\
+    J_{total,drift}&=&q(\mu_nn+\mu_pp)E
+\end{IEEEeqnarray*}
+\subsection{확산}
+두 번째 캐리어의 움직임은 확산이다. 캐리어들은 무작위로 움직이며 서로 부딪히는데, 만약 위치에 따른 농도차가 있다면 전체적인 움직임은 농도가 높은 곳에서 낮은 곳으로 향하여 결국 평형 상태에선 농도가 고르게 되려 할 것이다.
+그림으로 생각해보자.
+\begin{figure}
+    \centering
+    \image[height=5cm]{diffusion.png}
+    \caption{농도차가 있는 상태에서 입자의 움직임}\label{fig:diffusion}
+\end{figure}
+\figurename~\ref{fig:diffusion}에서 왼쪽 상자 내의 입자들 농도를 $n_1$이라 하고, 오른쪽 상자 내의 입자들 농도를 $n_2$라 하자. 상자의 높이는 농도를 의미한다. 즉 $n_1>n_2$인 상황이다.
+이 때, 무작위로 움직인다고 했으니 각 상자의 절반은 각자 왼쪽과 오른쪽으로 움직인다. 왼쪽 상자의 왼쪽 절반인 $n_1/2$는 왼쪽으로, 오른쪽 절반인 $n_1/2$는 오른쪽으로 간다.
+오른쪽 상자도 마찬가지로 왼쪽 절반인 $n_2/2$는 왼쪽으로, 오른쪽 절반인 $n_2/2$는 오른쪽으로 움직인다. 이 때, 두 상자 가운데 지점에서의 순수 입자 이동량을 생각해보면 오른쪽으로 $(n_1-n_2)/2$가 될 것이다.
+이로써 입자들은 농도가 높은 쪽에서 농도가 낮은 쪽으로 이동함을 설명할 수 있다.
+
+1차원(x방향)에서 단위 길이당 전자의 농도차는 $\frac{dn}{dx}$이고 단위 길이당 양공의 농도차는 $\frac{dp}{dx}$이다. 그리고 농도차의 반대 방향으로 움직이므로 움직임의 부호는 이들 농도차에 -가 붙어야 할 것이다.
+그리고 농도차에 대한 전자와 양공 각각의 비례 상수인 확산 계수 $D_n, D_p$가 있을 것이다. 여기에 전하량을 곱해주면 전류밀도가 된다. 수식으로 정리하면 다음과 같다.
+\begin{IEEEeqnarray*}{rCl}
+    J_{n,diff}&=&-(-q)D_n\frac{dn}{dx}\\
+    J_{p,diff}&=&-qD_p\frac{dp}{dx}\\
+    J_{total,diff}&=&q(D_n\frac{dn}{dx}-D_p\frac{dp}{dx})
+\end{IEEEeqnarray*}
+
+\subsection{아인슈타인 관계식}
+언뜻 보면 드리프트와 확산은 서로 상관이 없을 것 같다. 하지만 아인슈타인은 그렇지 않음을 증명했다. 다음과 같은 관계식이 성립한다.
+\begin{equation*}
+    \frac{D}{\mu}=\frac{kT}{q}
+\end{equation*}
+즉 같은 온도에서는 드리프트의 비례상수(이동도)와 확산의 비례상수(확산 계수)가 같은 비율로 움직인다는 뜻이다. 반도체 책에서는 이 수식을 유도하지만, 여기서는 증명하지 않고 넘어가겠다.
