@@ -37,6 +37,7 @@ MOS를 활용하면 입력 교류 전압보다 큰 출력 교류 전압을 만�
     \image[width=7cm]{cs_topology.PNG}
     \caption{일반적인 공통 소스 회로}\label{fig:cs stage}
 \end{figure}
+\paragraph{전압 이득}
 이 회로에서 $V_{GS}$는 얼마일까? $V_{in}$이 게이트와 $R_S$에 나눠 걸린다. 소신호 회로로 바꿔서 생각해보자(\figurename~\ref{fig:cs small signal}). 소신호는 교류만을 다루므로 DC 전압, 전류원은 0으로 처리한다. 또한 $r_o$는 매우 크다고 가정하자.
 \begin{figure}[!hpb]
     \centering
@@ -58,31 +59,97 @@ MOS를 활용하면 입력 교류 전압보다 큰 출력 교류 전압을 만�
 \begin{equation}
     (전압 이득)=-\frac{위쪽 임피던스}{아래쪽 임피던스}
 \end{equation}
-이 회로의 입력 임피던스는 게이트 임피던스이므로 무한대이고, 출력 임피던스는 $r_o$를 무시하면 $R_D$이다. 무시하지 않으면 어려워지므로 넘어가겠다.
 
+\paragraph{입출력 임피던스}
+이 회로의 입력 임피던스는 게이트 임피던스이므로 무한대이고, 출력 임피던스는 $r_o$를 무시하면 $R_D$이다. 무시하지 않으면 어려워지므로 넘어가겠다.
+입력 임피던스가 큼으로 생기는 장점은 무엇일까?
+\begin{figure}
+    \centering
+    \image[height=6cm]{signal_to_cs_circuit.png}
+    \caption{외부 신호원에 연결된 공통 소스 회로}\label{fig:cs with external voltage signal}
+\end{figure}
+\figurename~\ref{fig:cs with external voltage signal}에서 외부 입력 신호원에 어떤 저항 $R_{sig}$가 있다고 하자. 이게 일반적인 경우일 것이다.
+여기서 공통 소스 회로의 입력 임피던스 $R_{in}$이 크다면 신호원의 신호 $V_{sig}$는 $R_{in}$에 많이 분배될 것이다. 따라서 전압을 감지하려면 입력 임피던스가 큰 것이 유리하다.
+이것이 연산 증폭기 같은 전압 감지 회로에서 입력 임피던스가 커야 하는 이유이다.
+\paragraph{소스 디제너레이션 저항과 바이패서 커패시터}
 그런데, $R_S$는 왜 있는 것일까? 이 때문에 전압 이득이 작아지지 않는가? 그 이유는 $R_S$가 네거티브 피드백을 함으로써 안정성을 좋게 하기 때문이다.
 가령, DC로서 일정해야 할 바이어스 포인트가 흔들린다고 해보자. 그럼 출력 또한 흔들리게 될 것이다.
 그런데 $R_S$가 존재하면 입력 바이어스 포인트의 흔들림이 분배되어서 $V_{GS}$의 흔들림은 입력의 흔들림보다는 작아진다. 따라서 더 안정적인 동작을 할 수 있다.
 그렇다면, 이 작아지는 전압 이득을 보상할 방법은 없는가? \figurename~\ref{fig:cs with bypass cap}\을 보자.
-\begin{figure}[!hpb]
+\begin{figure}[!tpb]
     \centering
     \image[width=7cm]{cs_with_bypass_cap.PNG}
     \caption{바이패스 커패시터가 있는 공통 소스 회로}\label{fig:cs with bypass cap}
 \end{figure}
 $R_S$ 옆에 $C_S$를 달았다. 커패시터가 충분히 커서 우리가 원하는 주파수 $\omega$에 대해 커패시터의 임피던스 $\frac{1}{j\omega C_S}$가 충분히 작다면, 커패시터는 그라운드와 소스를 도통시키는 도선 역할을 하게 된다.
-따라서 교류 영역에서는 $R_S$가 없는 것과 마찬가지가 되어서 전압 이득이 $R_S$가 없는 $g_mR_D$로 커지게 된다.\
+따라서 교류 영역에서는 $R_S$가 없는 것과 마찬가지가 되어서 전압 이득이 $R_S$가 없는 $g_mR_D$로 커지게 된다.
 
 \subsection{공통 게이트 구성}
 공통 게이트 구성이란 게이트 단이 소스와 드레인의 공통 기준 전압이 되고, 소스로 전압 신호를 입력하는 구성을 말한다. \figurename~\ref{fig:cg topology}\를 보자.
-\begin{figure}[!tpb]
+\begin{figure}[!hpb]
     \centering
     \image[width=8cm]{cg_topology.PNG}
     \caption{공통 게이트 구성}\label{fig:cg topology}
 \end{figure}
+\paragraph{전압 이득}
+이 회로에서 $V_{GS}$는 $-V_{in}$이므로 종속전류원 $g_mV_{GS}$는 위쪽으로 $g_mV_{in}$의 전류를 흘릴 것이다. 따라서 $V_{out}$의 전압은 $g_mV_{in}R_D-0=g_mV_{in}R_D$이 되므로 전압 이득은 최종적으로 다음과 같다.
+\begin{equation}
+    A_v=\frac{V_{out}}{V_{in}}=\frac{g_mV_{in}R_D}{V_{in}}=g_mR_D
+\end{equation}
+이 식을 보면 공통 소스 구성과 크기는 같고 위상(부호)이 반대임을 알 수 있다. 이는 당연한 결과로, 그저 $V_{GS}$가 반대가 되니까 그런 것이다.
+\paragraph{입출력 임피던스}
+입출력 임피던스를 살펴보자. 먼저 출력 임피던스는 $R_D$로 공통 소스 구성과 동일할 것이다. 입력 임피던스는 어떨까? 공통 소스 구성에서 입력 임피던스는 무한대였다. 공통 게이트 구성에서는 어떻게 될지 \figurename~\ref{fig:cg input impedance}를 보며 생각해보자.
+\begin{figure}[!tbp]
+    \centering
+    \image[width=7cm]{cg_input_impedance.PNG}
+    \caption{공통 게이트 구성의 입력 임피던스를 구하기 위한 회로}\label{fig:cg input impedance}
+\end{figure}
+$V_{test}$가 공급하는 전류는 얼마일까? 바로 종속 전류원이 위쪽으로 흘리게 되는 전류인 $g_m(-V_{GS})=-g_m(0-V_{test})=g_mV_{test}$이다. 따라서 입력 임피던스는 $V_{test}/(g_mV_{test})=1/g_m$이다.
+이 값은 보통 작다. 실제로 수십 옴 정도였던 것 같다. 왜 이렇게 작은 입력 임피던스가 필요할까?
+전기자기학에서 전송선로 쪽을 공부해본 적이 있다면 알 것이다. 보통 전송선로의 임피던스는 $50 \Omega $ 혹은 $70 \Omega$이다.
+따라서 이러한 전송선로에 임피던스 매칭을 위해서는(임피던스 매칭을 하지 않으면 반사파가 생겨서 신호 전달이 잘 되지 않는다) 끝에 작은 임피던스가 달려야 한다. 이럴 경우, 공통 소스 구성보다는 공통 게이트 구성이 유리한 것이다.
 
 \subsection{소스 폴로워 구성}
+마지막 구성인 소스 폴로워 구성을 살펴보자. \figurename~\ref{fig:src follower topology}\를 보자.
+\begin{figure}[!hbp]
+    \centering
+    \image[height=7cm]{src_follower.PNG}
+    \caption{소스 폴로워 구성}\label{fig:src follower topology}
+\end{figure}
+\paragraph{전압 이득}
+이 회로의 전압 이득은 어떻게 될까? T 모델을 적용해서 생각해보자.
+\begin{figure}[!hbp]
+    \centering
+    \image[height=7cm]{src_follower_eq_circuit.PNG}
+    \caption{소스 폴로워의 T 모델 소신호 등가회로}\label{fig:src follower eq circuit}
+\end{figure}
+\figurename~\ref{fig:src follower eq circuit}에서 $V_{out}$은 어떻게 구할 수 있을까? 바로 $V_{in}$이 $1/g_m$과 $R_S$에 분배될 때 $R_S$가 가져가는 전압이 $V_{out}$임을 알 수 있다.
+따라서 전압 이득 $A_v$을 수식으로 쓰면 다음과 같다.
+\begin{equation}
+    A_v=\frac{V_{out}}{V_{in}}=\frac{\frac{R_S}{1/g_m+R_S}V_{in}}{V_{in}}=\frac{R_S}{1/g_m+R_S}
+\end{equation}
+이 값은 증폭기란 이름이 어울리지 않게도 1보다 항상 작다. $R_S$가 커지면 1에 가까이 갈 뿐이다(다만 부호가 +라서 입력과 출력 위상이 동일하기 때문에 소스를 따라간단 의미에서 소스 폴로워란 이름이 붙었다).
+그럼 왜 이런 회로를 쓰는 걸까?
+\paragraph{입출력 임피던스}
+입출력 임피던스를 생각해보자. 입력 임피던스는 게이트에 전류가 흐르지 않음에 따라 무한대이다. 출력 임피던스는 \figurename~\ref{fig:src follower eq circuit}에서 볼 수 있는 것처럼 위쪽으로 $1/g_m$, 아래쪽으로 $R_S$가 있으므로 이 둘의 병렬인데, 보텅 $1/g_m$이 훨씬 작으므로 출력 임피던스는 $1/g_m$에 가까운, 그러나 더 작은 값이다.
+이 작은 출력 임피던스는 $V_{out}$을 받아가는 부하에 전압 신호를 전달하기 유리하다. 다음 그림을 보자.
+\begin{figure}[!hbp]
+    \centering
+    \image[height=6cm]{src_follower_with_load.PNG}
+    \caption{부하 저항이 달린 소스 폴로워 테브닌 등가 회로}\label{fig:src follower Thevnin eq circuit}
+\end{figure}
+\figurename~\ref{fig:src follower Thevnin eq circuit}에서 소스 폴로워의 출력 전압 $V_{out}$이 부하 $R_L$에 잘 전달되려면 $R_{out}$은 어때야 할까? 0에 가까우면 가까울수록 $R_{out}$의 전압 강하가 작아져서 부하에 더 전압이 잘 전달될 것이다.
+만약 공통 소스 구성이었다면 어땠을까? 출력 임피던스가 크므로 출력 전압의 상당 부분이 자체 출력 임피던스에서 강하가 일어나버릴 것이다.
+이것이 연산 증폭기 같은 전압 출력 회로에서 출력 임피던스가 작아야 하는 이유이다.
 
-\subsection{캐스코드}
+\subsection{중간 정리}
+위 내용을 정리하면 다음과 같다.
+\begin{itemize}
+    \item 공통 게이트 회로: 입력 임피던스 작음, 출력 임피던스 큼, 입출력 전압 위상 같음, 전압 이득 큼
+    \item 공통 소스 회로: 입력 임피던스 큼, 출력 임피던스 큼, 입출력 전압 위상 반대, 전압 이득 큼
+    \item 소스 폴로워 회로: 입력 임피던스 큼, 출력 임피던스 작음, 입출력 전압 위상 같음, 전압 이득 작음
+\end{itemize}
+\subsection{캐스코드와 다이오드형 연결 형태}
 
 \subsection{바이어싱과 AC 커플링}
 
