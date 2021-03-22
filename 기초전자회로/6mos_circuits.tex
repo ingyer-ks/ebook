@@ -58,3 +58,34 @@ MOS를 활용하면 입력 교류 전압보다 큰 출력 교류 전압을 만�
 \begin{equation}
     (전압 이득)=-\frac{위쪽 임피던스}{아래쪽 임피던스}
 \end{equation}
+이 회로의 입력 임피던스는 게이트 임피던스이므로 무한대이고, 출력 임피던스는 $r_o$를 무시하면 $R_D$이다. 무시하지 않으면 어려워지므로 넘어가겠다.
+
+그런데, $R_S$는 왜 있는 것일까? 이 때문에 전압 이득이 작아지지 않는가? 그 이유는 $R_S$가 네거티브 피드백을 함으로써 안정성을 좋게 하기 때문이다.
+가령, DC로서 일정해야 할 바이어스 포인트가 흔들린다고 해보자. 그럼 출력 또한 흔들리게 될 것이다.
+그런데 $R_S$가 존재하면 입력 바이어스 포인트의 흔들림이 분배되어서 $V_{GS}$의 흔들림은 입력의 흔들림보다는 작아진다. 따라서 더 안정적인 동작을 할 수 있다.
+그렇다면, 이 작아지는 전압 이득을 보상할 방법은 없는가? \figurename~\ref{fig:cs with bypass cap}\을 보자.
+\begin{figure}[!hpb]
+    \centering
+    \image[width=7cm]{cs_with_bypass_cap.PNG}
+    \caption{바이패스 커패시터가 있는 공통 소스 회로}\label{fig:cs with bypass cap}
+\end{figure}
+$R_S$ 옆에 $C_S$를 달았다. 커패시터가 충분히 커서 우리가 원하는 주파수 $\omega$에 대해 커패시터의 임피던스 $\frac{1}{j\omega C_S}$가 충분히 작다면, 커패시터는 그라운드와 소스를 도통시키는 도선 역할을 하게 된다.
+따라서 교류 영역에서는 $R_S$가 없는 것과 마찬가지가 되어서 전압 이득이 $R_S$가 없는 $g_mR_D$로 커지게 된다.\
+
+\subsection{공통 게이트 구성}
+공통 게이트 구성이란 게이트 단이 소스와 드레인의 공통 기준 전압이 되고, 소스로 전압 신호를 입력하는 구성을 말한다. \figurename~\ref{fig:cg topology}\를 보자.
+\begin{figure}[!tpb]
+    \centering
+    \image[width=8cm]{cg_topology.PNG}
+    \caption{공통 게이트 구성}\label{fig:cg topology}
+\end{figure}
+
+\subsection{소스 폴로워 구성}
+
+\subsection{캐스코드}
+
+\subsection{바이어싱과 AC 커플링}
+
+\subsection{캐스코드}
+
+\subsection{주파수 응답}
