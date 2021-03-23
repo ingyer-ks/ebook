@@ -207,6 +207,21 @@ $r_o$를 고려한 이 회로에서 $R_{out}$은 어떻게 될까? 소신호 등
 이다.
 
 \paragraph{MOS의 다이오드형 연결}
+만약 MOS로 작은 임피던스를 만들고 싶다면 어떻게 하면 될까? \figurename~\ref{fig:diode connected}\를 보자.
+\begin{figure}[!tbp]
+    \centering
+    \image[height=5cm]{diode-connected.PNG}
+    \caption{다이오드형 연결된 MOS}\label{fig:diode connected}
+\end{figure}
+이 \figurename~에서 $R_{out}$은 어떻게 될 것인가? $R_{out}$자리에 테스트 전압 $V_{test}$을 가한다고 하자. 그러면 이 테스트 전압에 의해 $V_{GS}=V_{test}$가 될 것이고, MOS에 흐르는 전류는 $I_DS=g_mV_{test}$가 될 것이다.
+그리고 게이트를 통해 흐르는 전류는 없으니 테스트 전압이 공급하는 전류는 이 $I_D$가 전부이다($r_o$는 무시했다). 따라서 출력 저항 $R_{out}=\frac{V_{test}}{I_D}=\frac{V_{test}}{g_mV_{test}}=1/g_m$이 된다. 이 값은 보통 수십 옴 정도이니 원하는대로 작은 임피던스가 만들어졌다.
+
+약간 바뀐 회로인 \figurename~\ref{fig:diode connected with RD}에 대해 생각해보자. 이 회로의 출력 임피던스는 얼마일까?
+\begin{figure}[!hbp]
+    \centering
+    \image[height=5cm]{diode-connected_with_rd.PNG}
+    \caption{변형된 다이오드형 연결된 MOS}\label{fig:diode connected with RD}
+\end{figure}
 
 \subsection{바이어싱과 AC 커플링}
 
