@@ -21,4 +21,4 @@
 
 ## 라이센스
 저작자표시-비영리 4.0 국제 (CC BY-NC 4.0) 라이센스가 적용된다.
-[!License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
