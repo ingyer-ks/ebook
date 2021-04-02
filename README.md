@@ -18,7 +18,8 @@
 ## 피드백
 제안할 사항이 있다면 아래 경로로 알려주세요
 * ingyer.ks@gmail.com
-* 오픈카톡 https://open.kakao.com/o/gqYyNB0c
+* 오픈카톡방 https://open.kakao.com/o/gVtHzPsc
+* 오픈카톡 프로필 https://open.kakao.com/me/commks
 
 ## 라이센스
 저작자표시-비영리 4.0 국제 (CC BY-NC 4.0) 라이센스가 적용된다.
